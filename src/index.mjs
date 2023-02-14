@@ -1,4 +1,4 @@
-import {toNumber}  from 'lodash/lang'
+import {toNumber}  from 'lodash/lang.js'
 
 function arrayChunk(myArray, chunk_size){
   let results = [];

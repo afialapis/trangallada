@@ -38,7 +38,7 @@ const baseCfg= (output, withReplace, withTerser) => {
   return {
     input: input,
     output: output,
-    external: ['lodash/lang', 'lodash'],
+    external: ['lodash/lang.js'],
     plugins: plugins  
   }
 }
@@ -78,7 +78,7 @@ module.exports = [
     format: 'umd',
     name: 'Trangallada',
     globals: {
-      'lodash/lang': '_'
+      'lodash/lang.js': '_'
     }
   }, true, false),
   baseCfg({
@@ -86,7 +86,7 @@ module.exports = [
     format: 'umd',
     name: 'Trangallada',
     globals: {
-      'lodash/lang': '_'
+      'lodash/lang.js': '_'
     }
   }, true, true), 
   

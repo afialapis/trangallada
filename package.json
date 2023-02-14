@@ -1,0 +1,65 @@
+{
+  "name": "trangallada",
+  "version": "0.0.1",
+  "description": "stupid package for testing purposes",
+  "author": "Donato Lorenzo <donato@afialapis.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/afialapis/trangallada.git",
+    "directory": "packages/collections"
+  },
+  "bugs": {
+    "url": "https://github.com/afialapis/trangallada/issues"
+  },
+  "homepage": "https://github.com/afialapis/trangallada",
+  "type": "module",
+  "main": "./src/index.mjs",
+  "cjs": "./dist/trangallada.cjs",
+  "module": "./dist/trangallada.mjs",
+  "browser": "./dist/trangallada.umd.js",
+  "exports": {
+    "import": "./dist/trangallada.mjs",
+    "require": "./dist/trangallada.cjs",
+    "default": "./dist/trangallada.cjs"
+  },  
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/eslint-parser": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-react": "^7.17.12",
+    "@babel/register": "^7.17.7",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-replace": "^4.0.0",
+    "eslint": "^8.17.0",
+    "rollup": "^2.75.6",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "scripts": {
+    "lint": "eslint ./src/*",
+    "clean-lib": "rm -rf lib && mkdir lib",
+    "lib": "npm run clean-lib && babel src -d lib",
+    "clean-dist": "rm -rf dist && mkdir dist",
+    "dist": "npm run clean-dist && rollup -c",
+    "clean-all": "npm run clean-lib && npm run clean-dist && rm -fr node_modules package-lock.json",
+    "reset": "npm run clean-all && npm i",
+    "prepare": "npm run lint && npm run lib && npm run dist"
+  }
+
+}
